@@ -1,0 +1,49 @@
+TYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de aprendizagem do Ensino Médio Técnico.">
+  <title>Front-End | Minha Trajetória</title>
+ 
+  <!-- Folha de estilos compartilhada. O caminho muda nas páginas dentro de /paginas. -->
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO E MENU PRINCIPAL: o menu horizontal usa display:flex no CSS. -->
+<header class="site-header">
+  <a class="marca" href="../index.html">Minha Trajetória<small>Portfólio de Aprendizagem • Ensino Médio Técnico</small></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">☰ Menu</button>
+  <nav aria-label="Navegação principal">
+    <ul class="menu-horizontal" id="menu-principal">
+      <li><a href="../index.html">Início</a></li><li><a href="areas-do-saber.html">Áreas do Saber</a></li><li><a href="formacao-tecnica.html" aria-current="page">Formação Técnica</a></li><li><a href="curriculo.html">Currículo</a></li><li><a href="memorias.html">Memórias</a></li><li><a href="jornada.html">Jornada</a></li><li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <p class="eyebrow">Formação técnica</p><h1>Automação e robótica</h1>
+  <p class="subtitulo">Exemplo de página técnica para explicar as tecnologias estudadas e registrar evidências de prática.</p>
+  <section class="grade-cards">
+
+    <article class="card"><h3>Automação</h3><p>Durante os estudos sobre automação, aprendi como utilizar a tecnologia para realizar tarefas de forma automática, facilitando atividades do dia a dia e tornando os processos mais eficientes. Conheci o funcionamento de sensores, dispositivos eletrônicos e sistemas programáveis, além de entender como a programação pode ser utilizada para controlar equipamentos. Também percebi como a automação está presente em diferentes ambientes, como casas, empresas e indústrias, contribuindo para a praticidade, segurança e economia de tempo.</p></article>
+    <article class="card"><h3>Robótica</h3><p>Durante os estudos sobre robótica, aprendi como funciona a criação e a programação de robôs, entendendo como a tecnologia pode ser utilizada para realizar diferentes tarefas. Conheci a importância dos componentes eletrônicos, sensores e sistemas automatizados, além de compreender como a programação permite controlar os movimentos e as funções dos robôs. Também percebi como a robótica está presente no nosso cotidiano, sendo utilizada em indústrias, hospitais, empresas e até mesmo em nossas casas.</p></article>
+    
+  </section>
+
+  <section class="card"><h2>Boné Automátizado</h2><p>Durante esse projeto, desenvolvemos um boné tecnológico utilizando componentes eletrônicos, como sensores, fios, LEDs e uma placa de programação. A proposta foi unir conhecimentos de robótica e automação para criar um protótipo funcional, colocando em prática o que aprendemos sobre circuitos e programação. Com essa atividade, pude entender melhor como a tecnologia pode ser aplicada em objetos do cotidiano, transformando uma ideia em um projeto prático.</p>
+    <img class="hero-foto" src="../imagens/boné.png" alt="Imagem ilustrativa de código de programação" style="width: 700px; height: 400px;"></section>
+</main>
+
+
+
+
+<!-- RODAPÉ compartilhado por todas as páginas. -->
+<footer class="site-footer">
+  <p>Portfólio de Aprendizagem • Ensino Médio Técnico</p>
+  <p>Projeto educativo para registrar conhecimentos, projetos e memórias.</p>
+  <p><a style="color:#fff" href="../index.html">Voltar ao início</a></p>
+</footer>
+<script src="../js/site.js"></script>
+</body>
+</html>
