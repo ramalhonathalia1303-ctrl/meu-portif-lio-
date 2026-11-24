@@ -1,0 +1,61 @@
+PORTFÓLIO DO ESTUDANTE — HTML, CSS E JAVASCRIPT
+=================================================
+
+ABRIR O PROJETO
+1. Extraia o arquivo ZIP.
+2. Abra a pasta no Visual Studio Code.
+3. Abra index.html no navegador.
+4. Para editar, altere os arquivos .html, css/estilo.css e js/site.js.
+
+MODELOS INCLUÍDOS
+- index.html: página inicial com menu horizontal, carrossel horizontal e carrossel vertical.
+- paginas/areas-do-saber.html: cards de áreas do conhecimento.
+- paginas/ciencias-natureza.html, ciencias-humanas.html, linguagens.html e matematica.html.
+- paginas/disciplina-*.html: modelos individuais para disciplinas.
+- paginas/formacao-tecnica.html e paginas/front-end.html.
+- paginas/curriculo.html, memorias.html, projeto-destaque.html, jornada.html e contato.html.
+
+CARROSSEIS
+- Horizontal: CSS usa display:flex, overflow-x:auto e scroll-snap-type:x mandatory.
+- Vertical: CSS usa overflow-y:auto e scroll-snap-type:y mandatory.
+- js/site.js associa os botões de seta às funções scrollBy().
+- O menu horizontal superior usa Flexbox e vira menu compacto em telas estreitas.
+
+IMAGENS
+- As imagens em imagens/ são ilustrações fictícias e recortes de uma imagem conceitual gerada para servir de exemplo visual. Não representam pessoas reais conhecidas.
+- Substitua os arquivos pelas fotos do estudante e imagens autorizadas.
+- Mantenha o mesmo nome do arquivo ou atualize o atributo src no HTML.
+- Não publique imagens de colegas sem autorização.
+
+ESTRUTURA DE PASTAS
+portfolio/
+  index.html
+  css/estilo.css
+  js/site.js
+  imagens/
+  paginas/
+
+COMO ADICIONAR UMA PÁGINA
+1. Duplique uma página existente em paginas/.
+2. Renomeie o arquivo, por exemplo projeto-novo.html.
+3. Mantenha o link para ../css/estilo.css e ../js/site.js.
+4. Atualize o título, o conteúdo e os links do menu.
+5. Teste os links e imagens no navegador.
+
+COMO TROCAR O NOME E A FOTO
+- Abra index.html e altere “João Silva” para o nome desejado.
+- Troque imagens/estudante.jpg por uma foto autorizada, mantendo o nome ou atualizando src.
+- Atualize também a identificação na página paginas/curriculo.html.
+
+OBSERVAÇÃO
+O formulário de contato é apenas demonstrativo e não envia mensagens para um servidor.
+
+\n\nMODELOS DE CURRÍCULO ADICIONADOS (PDF DE REFERÊNCIA)\n
+Foram incluídos sete modelos HTML/CSS em paginas/modelo-cv-1.html até modelo-cv-7.html.
+- Modelos 1 a 5: impressão em papel A4, orientação retrato.
+- Modelos 6 e 7: impressão em papel A4, orientação paisagem.
+- Cada página tem botão “Baixar arquivo PDF” para baixar o PDF pronto e botão “Imprimir / Salvar como PDF”.
+- Os campos de nome, cargo e textos podem ser editados diretamente no navegador em muitos navegadores (contenteditable no cabeçalho); edite o HTML para personalização completa.
+- Os PDFs são modelos demonstrativos com textos fictícios; substitua-os por informações autorizadas e verdadeiras.
+- As áreas marcadas FOTO são espaços reservados; adicione somente fotos próprias ou autorizadas.
+- CSS documentado: css/modelos-cv.css; estilos dos cartões na página inicial: css/modelos-cv-index.css.
