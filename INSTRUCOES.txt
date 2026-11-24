@@ -1,0 +1,1 @@
+Substitua as imagens ilustrativas por fotos e imagens autorizadas. Mantenha os nomes dos arquivos ou atualize os atributos src nos HTML.
