@@ -1,0 +1,70 @@
+/* MODELOS DE CURRÍCULO
+   Regras compartilhadas pelos sete modelos. Comentários explicam os recursos usados.
+   Cada página escolhe a orientação A4 por meio da classe .retrato ou .paisagem. */
+:root { --azul:#1457a6; --escuro:#0b3159; --verde:#176b64; --texto:#243247; --claro:#edf3f8; }
+* { box-sizing:border-box; }
+body { margin:0; background:#e8edf2; color:var(--texto); font-family:Arial, sans-serif; line-height:1.45; }
+.toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; padding:14px; }
+.toolbar a { color:#123d70; }
+.btn { display:inline-block; border:0; border-radius:5px; padding:10px 15px; background:#1457a6; color:white !important; text-decoration:none; font: bold 14px Arial; cursor:pointer; }
+.btn.secundario { background:#34465b; }
+.folha { background:white; margin:12px auto 30px; padding:16mm; box-shadow:0 3px 18px #0002; }
+.cv-header { display:flex; align-items:center; gap:18px; padding:0 0 18px; border-bottom:2px solid var(--azul); }
+.avatar { width:78px; height:78px; flex:0 0 78px; display:grid; place-items:center; border-radius:50%; background:#d9e6f4; color:#1457a6; font-size:12px; font-weight:bold; border:2px solid #b7cde6; }
+.eyebrow { font-size:10px; letter-spacing:1.5px; font-weight:bold; color:var(--azul); margin:0 0 5px; }
+h1 { font-size:25px; margin:0 0 4px; line-height:1.15; }
+.cargo { margin:0; font-size:13px; font-weight:bold; }
+.cv-content { padding-top:10px; }
+.cv-section { margin:0 0 12px; break-inside:avoid; }
+.cv-section h2 { margin:0 0 4px; font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:var(--azul); }
+.cv-section p { margin:0; font-size:11px; }
+footer { margin-top:10px; border-top:1px solid #d9e1e9; padding-top:7px; color:#657487; font-size:8px; }
+/* Modelo 1: barra lateral azul, simulada com borda esquerda e cabeçalho destacado. */
+.modelo-1 .folha { border-left:12mm solid #1457a6; }
+.modelo-1 .cv-header { border-bottom-color:#1457a6; }
+.modelo-1 .avatar { border-radius:8px; }
+/* Modelo 2: visual clássico com cabeçalho azul escuro. */
+.modelo-2 .cv-header { background:#0b3159; color:white; padding:14px; margin:-16mm -16mm 12px; }
+.modelo-2 .eyebrow,.modelo-2 .cv-section h2 { color:#2875c9; }
+.modelo-2 .eyebrow { color:#b8d7ff; }
+/* Modelo 3: compacto escuro com avatar quadrado. */
+.modelo-3 .folha { border-radius:9px; border-top:9mm solid #22252b; }
+.modelo-3 .avatar { border-radius:9px; background:#22252b; color:white; }
+/* Modelo 4: minimalista verde, com espaços amplos e divisórias suaves. */
+.modelo-4 { --azul:#176b64; }
+.modelo-4 .folha { border-top:5mm solid #176b64; }
+.modelo-4 .avatar { background:#e0f1ee; color:#176b64; border:0; }
+/* Modelo 5: faixa de cabeçalho e seções compactas. */
+.modelo-5 .cv-header { border-bottom:5px solid #163b70; }
+.modelo-5 .cv-section { border-left:3px solid #d5e4f5; padding-left:10px; }
+/* Modelo 6: duas colunas em paisagem usando CSS Grid. */
+.modelo-6 .cv-content { display:grid; grid-template-columns:1fr 1fr; gap:8px 22px; }
+.modelo-6 .cv-header { border-bottom-color:#1457a6; }
+/* Modelo 7: currículo/portfólio horizontal com cartões em grade. */
+.modelo-7 .cv-content { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 20px; }
+.modelo-7 .cv-section { padding:10px; background:#f2f6fa; border-radius:5px; margin:0; }
+.modelo-7 .cv-header { background:#0b3159; color:white; padding:14px; margin:-16mm -16mm 12px; }
+.modelo-7 .eyebrow { color:#b8d7ff; }
+/* Responsividade para visualização em telas pequenas. */
+@media screen {
+ .folha { width:min(94vw, 900px); min-height:600px; }
+ .paisagem .folha { width:min(94vw, 1100px); }
+}
+@media screen and (max-width:600px) {
+ .cv-header { align-items:flex-start; gap:10px; }
+ h1 { font-size:21px; }
+ .modelo-6 .cv-content,.modelo-7 .cv-content { grid-template-columns:1fr; }
+ .modelo-1 .folha { border-left-width:5mm; }
+}
+/* Impressão: remove botões e define o tamanho/orientação do papel. */
+@page { size:A4 portrait; margin:12mm; }
+@page landscape { size:A4 landscape; margin:12mm; }
+@media print {
+ body { background:white; color:#111; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+ .toolbar { display:none !important; }
+ .folha { width:auto !important; min-height:0; margin:0; padding:0; box-shadow:none; }
+ .paisagem .folha { page:landscape; }
+ .cv-section { break-inside:avoid; }
+ .modelo-2 .cv-header,.modelo-7 .cv-header { margin:0 0 10px; }
+ .modelo-1 .folha { border-left-width:8mm; padding-left:8mm; }
+}

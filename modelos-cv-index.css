@@ -1,0 +1,10 @@
+/* Cards da nova galeria de modelos de currículo na página inicial. */
+.secao-modelos-cv { padding:28px 0; }
+.secao-modelos-cv h2 { color:#1457a6; }
+.grade-modelos-cv { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.card-modelo-cv { background:#fff; border:1px solid #d8e2ed; border-radius:10px; padding:18px; box-shadow:0 2px 8px #17365b12; }
+.card-modelo-cv h3 { margin:10px 0; font-size:18px; }
+.card-modelo-cv p { font-size:14px; }
+.etiqueta-modelo { display:inline-block; background:#e8f1fb; color:#1457a6; border-radius:20px; padding:4px 9px; font-size:12px; font-weight:bold; }
+.link-modelo-cv,.link-pdf-cv { display:inline-block; margin:8px 8px 0 0; padding:8px 10px; border-radius:5px; background:#1457a6; color:white; text-decoration:none; font-size:13px; }
+.link-pdf-cv { background:#176b64; }

@@ -1,0 +1,367 @@
+/* ============================================================
+   PORTFÓLIO DO ESTUDANTE — FOLHA DE ESTILOS PRINCIPAL
+   Arquivo: css/estilo.css
+   Objetivo: concentrar os estilos compartilhados por todas as páginas.
+   Dica didática: experimente mudar as cores em :root e observe o site.
+   ============================================================ */
+
+/* 1. Variáveis CSS: cores reutilizáveis em todo o projeto */
+:root {
+    --azul-escuro: #d887d8;
+    --azul: #8138a3;
+    --azul-claro: #ebabdf;
+    --azul-destaque: #bf98ea;
+    --texto: #0e0b0a;
+    --texto-suave: #141313;
+    --fundo: #e5b0d4;
+    --branco: #ede3f7;
+    --borda: #d7e5f2;
+    --sombra: 0 8px 24px rgba(59, 10, 85, 0.1);
+}
+
+/* 2. Reset: deixa as medidas mais previsíveis */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* rolagem suave ao acessar uma âncora */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    background: var(--fundo);
+}
+
+/* 3. Cabeçalho compartilhado */
+.site-header {
+    background: linear-gradient(120deg, var(--azul-escuro), var(--azul));
+    color: var(--branco);
+    padding: 14px clamp(16px, 4vw, 48px);
+    display: flex;             /* Flexbox: logo e navegação ficam lado a lado */
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.marca {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.marca small {
+    display: block;
+    font-size: .72rem;
+    font-weight: 400;
+    opacity: .85;
+}
+
+/* 4. Menu horizontal superior */
+.menu-horizontal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-horizontal a {
+    display: block;
+    color: var(--branco);
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 6px;
+    font-size: .9rem;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.menu-horizontal a:hover,
+.menu-horizontal a:focus-visible,
+.menu-horizontal a[aria-current="page"] {
+    background: rgba(255,255,255,.18);
+    outline: none;
+}
+
+/* 5. Botão de menu para telas estreitas */
+.menu-toggle {
+    display: none;
+    border: 1px solid rgba(255,255,255,.45);
+    background: transparent;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* 6. Layout de conteúdo: largura controlada e centralizada */
+main, .container {
+    width: min(1180px, calc(100% - 32px));
+    margin: 28px auto;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    color: var(--azul-escuro);
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.45rem, 2.5vw, 2rem); }
+h3 { font-size: 1.15rem; }
+
+.subtitulo {
+    color: var(--texto-suave);
+    max-width: 760px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--azul-destaque);
+}
+
+/* 7. Hero: área de destaque da página inicial */
+.hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr; /* duas colunas proporcionais */
+    align-items: center;
+    gap: 28px;
+    padding: clamp(22px, 4vw, 48px);
+    background: linear-gradient(130deg, #e9f4ff, #ffffff);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    box-shadow: var(--sombra);
+}
+
+.hero p { max-width: 650px; }
+.hero-foto {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 4px solid white;
+    box-shadow: var(--sombra);
+}
+
+/* 8. Botões e links de ação */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--azul-destaque);
+    color: white;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.botao:hover { background: var(--azul); transform: translateY(-2px); }
+.botao.secundario { background: white; color: var(--azul); border: 1px solid var(--borda); }
+
+/* 9. Cards e grades: CSS Grid */
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 20px 0 34px;
+}
+
+.card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(11,45,80,.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 { margin-top: 12px; }
+.card p { color: var(--texto-suave); }
+.card a { margin-top: 8px; }
+
+/* 10. Carrossel HORIZONTAL: overflow-x + scroll-snap */
+.carrossel {
+    position: relative;
+    margin: 18px 0 32px;
+}
+
+.carrossel-faixa {
+    display: flex;              /* itens lado a lado */
+    gap: 18px;
+    overflow-x: auto;           /* permite rolagem horizontal */
+    padding: 8px 4px 18px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.carrossel-faixa > .slide {
+    flex: 0 0 min(300px, 82vw); /* cada slide tem largura controlada */
+    scroll-snap-align: start;
+}
+
+.controles-carrossel {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.controles-carrossel button,
+.controles-vertical button {
+    border: 1px solid var(--borda);
+    background: white;
+    color: var(--azul-escuro);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.controles-carrossel button:hover,
+.controles-vertical button:hover { background: var(--azul-claro); }
+
+/* 11. Carrossel VERTICAL: itens rolam de cima para baixo */
+.carrossel-vertical {
+    height: 330px;
+    overflow-y: auto;           /* permite rolagem vertical */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: white;
+    padding: 12px;
+}
+
+.slide-vertical {
+    min-height: 145px;
+    scroll-snap-align: start;
+    padding: 16px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.controles-vertical {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+/* 12. Layout de página interna com menu lateral */
+.layout-interno {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.menu-lateral {
+    position: sticky;           /* acompanha a rolagem sem sair da área */
+    top: 16px;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.menu-lateral a {
+    display: block;
+    color: var(--azul);
+    text-decoration: none;
+    padding: 9px 10px;
+    border-radius: 6px;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a:focus-visible { background: var(--azul-claro); }
+
+.painel-conteudo {
+    min-width: 0;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: clamp(18px, 3vw, 32px);
+}
+
+/* 13. Linha do tempo e etiquetas de competências */
+.linha-tempo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.etiquetas { display: flex; flex-wrap: wrap; gap: 8px; }
+.etiqueta {
+    background: var(--azul-claro);
+    color: var(--azul);
+    border-radius: 999px;
+    padding: 5px 11px;
+    font-size: .88rem;
+}
+
+/* 14. Formulários acessíveis */
+label { display: block; font-weight: 700; margin: 12px 0 5px; }
+input, textarea, select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b9ccdc;
+    border-radius: 6px;
+    font: inherit;
+}
+textarea { min-height: 130px; resize: vertical; }
+
+/* 15. Rodapé */
+.site-footer {
+    margin-top: 48px;
+    padding: 24px 16px;
+    background: var(--azul-escuro);
+    color: white;
+    text-align: center;
+}
+.site-footer p { margin: 4px; }
+
+.card .hero-foto {
+    width: 100%;
+    height: 250%;
+    max-height: none;
+    object-fit: contain;
+    display: block;
+}
+
+/* 16. Responsividade: adapta o layout a celulares e tablets */
+@media (max-width: 850px) {
+    .site-header { align-items: flex-start; flex-wrap: wrap; }
+    .menu-toggle { display: inline-block; }
+    .menu-horizontal { display: none; width: 100%; flex-direction: column; align-items: stretch; }
+    .menu-horizontal.aberto { display: flex; }
+    .menu-horizontal a { width: 100%; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-foto { max-height: 320px; }
+    .layout-interno { grid-template-columns: 1fr; }
+    .menu-lateral { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html, .carrossel-faixa, .carrossel-vertical { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; }
+}
